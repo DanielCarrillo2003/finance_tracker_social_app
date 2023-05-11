@@ -1,6 +1,10 @@
 require 'httparty'
 
 class Stock < ApplicationRecord
+    has_many :user_stocks
+    has_many :users, through: :user_stocks
+
+    validates :name, :ticker, presence: true
 
     def self.company_lookup(ticker_symbol)
         response = HTTParty.get("https://www.alphavantage.co/query?function=OVERVIEW&symbol=#{ticker_symbol}&apikey=#{Rails.application.credentials.alpha_client[:api_key]}")
