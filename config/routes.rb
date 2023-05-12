@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'search_stock', to: 'stocks#search', defaults: { format: 'js' }
   get 'friends_list', to: 'users#my_friends_list'
   get 'search_friend', to: 'users#search', defaults: { format: 'js' }
+  resources :friendships, only: [:create, :destroy]
+  resources :users, only: [:show]
 end
