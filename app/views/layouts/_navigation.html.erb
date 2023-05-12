@@ -11,7 +11,8 @@
             <%= link_to 'My portfolio', my_portfolio_path, class: "nav-link #{'active' if request.path == my_portfolio_path}" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <%= link_to 'My friends', friends_list_path, class: "nav-link #{'active' if request.path == friends_list_path}" %>
+          </li>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
